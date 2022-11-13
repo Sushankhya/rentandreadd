@@ -1,0 +1,93 @@
+nav {
+
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    box-shadow: 0px 1.5px 3px 1px #88888867;
+}
+
+.navbarLeft {
+    width: 20%;
+}
+
+.navbarLeft img {
+    width: 45px;
+    height: 45px;
+    background-color: none;
+    margin: 10px 0px 10px 20px;
+    border: 50% solid;
+}
+
+.navbarMiddle {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.navList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
+}
+
+.navList li a{
+    cursor: pointer;
+    color: black;
+}
+
+.navList li a:hover {
+    color: rgba(0, 0, 0, 0.448);
+    transition: all 0.2s;
+}
+
+.navbarMiddle ul li a{
+    text-decoration: none;
+}
+
+.navbarRight {
+    display: flex;
+    width: 30%;
+    margin-right: 5%;
+    justify-content: right;
+    align-items: center;
+}
+
+.user-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.user-cart{
+    width: 2rem;
+}
+
+.loginBtn,
+.signUpBtn{
+    padding: 8px 10px;
+    border: 1px solid black;
+    margin-left: 0.5rem;
+    background-color: black;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.loginBtn:hover,
+.signUpBtn:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.1s ease-in-out;
+}
+
+
+
+

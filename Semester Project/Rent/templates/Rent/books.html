@@ -1,0 +1,169 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Style/books.css' %}">
+    <script src="{% static 'Script/books.js' %}" defer></script>
+    <script src="{% static 'Script/cart.js' %}" defer></script>
+    <title>rentNread: Books</title>
+{% endblock head%}
+
+
+{% block content%}
+
+<div class = "carousel-container">
+    <div class = "carousel" data-carousel>
+        <button class = "carousel-btn prev" data-carousel-btn = "prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class = "carousel-btn next" data-carousel-btn = "next"><i class="fa-solid fa-chevron-right"></i></button>
+        <ul data-slides>
+            <li class="slide" data-active>
+                <img src="{% static 'image/cover-book1.jpg'%}">
+            </li>
+            <li class="slide">
+                <img src="{% static 'image/cover-book2.jpg'%}">
+            </li>
+            <li class="slide">
+                <img src="{% static 'image/cover-book3.jpg'%}">
+            </li>
+        </ul>
+    </div>        
+</div>
+
+<!-- {% static 'image/filled-star.png' %} -->
+<div class = "books-section">
+    <div class = "categories-section">
+        <h2>Categories</h2>
+        <ul>
+            <li><button class = 'category-btn'><a href="{%url 'book'%}">All Books</a></button></li>
+            {% for cato in categories %}
+            <li><button class = 'category-btn'><a href="/books/{{cato}}/">{{cato}}</a></button></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class = "rent-book">
+        <!-- recently-added book section -->
+        <div class ="recently-added">
+            <div class = "book-header"><h2>TOP RATED</h2><button class="see-more-btn"><a href="/books/Top%20Rated/">SEE MORE</a></button></div>
+            <div class = "book-row">
+
+                {% for book in top_rated%}
+                <div class = "book-card-wrapper-large" title="{{book.title}}">
+                    <a href = "/bookview/{{book.id}}" class = "product-link-large">
+                        <div class = "book-card" data-card-btn>
+                            <div class = "book-cover">
+                                <img src="/static/images{{book.book_cover.url}}" alt="">
+                            </div>
+                            <div class = "title">
+                                {{book.title|truncatechars:20}}
+                            </div>
+                            <div class = "description">
+                                {{book.description|truncatechars:55}}
+                            </div>
+                            <div class="author">{{ book.author }}</div>
+                            <ul class = "ratings">
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/blank-star.png' %}"></li>
+                            </ul>
+                            <div class="price">Rs. {{book.price}}</div>
+                    </a>
+                    <div class="add-to-cart update-cart {% if book.in_cart %}remove-from-cart{%endif%} {% if not book.available %} not-available{% endif %}" data-book={{book.id}} data-action="{% if book.in_cart %}remove{% else %}add{%endif%}" data-cart-btn><i class="fa-solid fa-cart-shopping"></i>ADD TO CART</div>                                  
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class ="recently-added">
+            <div class = "book-header"><h2>Nepali</h2><button class="see-more-btn"><a href="/books/Nepali/">SEE MORE</a></button></div>
+            <div class = "book-row">
+                {% for book in nepaliBook %}
+                <div class = "book-card-wrapper-large" title="{{book.title}}">
+                    <a href = "/bookview/{{book.id}}" class = "product-link-large">
+                        <div class = "book-card" data-card-btn>
+
+                            <div class = "book-cover">
+                                <img src="/static/images{{book.book_cover.url}}" alt="">
+                            </div>
+                            <div class = "title">
+                                <p>{{book.title|truncatechars:20}}</p>
+                            </div>
+                            <div class = "description">
+                                {{book.description|truncatechars:55}}
+                            </div>
+                            <div class="author">{{ book.author }}</div>
+                            <ul class = "ratings">
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/filled-star.png' %}"></li>
+                                <li><img src="{% static 'image/blank-star.png' %}"></li>
+                            </ul>
+                            <div class="price">Rs. {{book.price}}</div>
+                        </a>
+                            <div class="add-to-cart update-cart {% if book.in_cart %}remove-from-cart{%endif%} {% if not book.available %} not-available{% endif %}" data-book={{book.id}} data-action="{% if book.in_cart %}remove{% else %}add{%endif%}" data-cart-btn><i class="fa-solid fa-cart-shopping"></i>ADD TO CART</div>                    
+                        </div>
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- all books -->
+        <div  class = "other-books">
+            <div class = "book-header"><h2>Others</h2></div>
+            <div class = "books-grid">
+
+                {% for book in books %}
+                {% if book %}
+                <div class = "book-card-wrapper" title="{{book.title}}">
+                    <a href="/bookview/{{book.id}}" class="product-link" >
+                        <div class="book-card-small">
+                            <img src="/static/images{{book.book_cover.url}}" class="book-image-small">
+                            <div class ="book-content">
+                                <div class = "title-small">
+                                    {{book.title|truncatechars:15}}
+                                </div>
+                                <div class = "description-small">
+                                    {{book.description|truncatechars:45}}
+                                </div>
+                                <div class = "author-small">{{book.author}}</div>
+                                <ul class = "ratings-small">
+                                    <li><img src="{%static 'image/filled-star.png'%}"></li>
+                                    <li><img src="{%static 'image/filled-star.png'%}"></li>
+                                    <li><img src="{%static 'image/filled-star.png'%}"></li>
+                                    <li><img src="{%static 'image/filled-star.png'%}"></li>
+                                    <li><img src="{%static 'image/filled-star.png'%}"></li>
+                                </ul>
+                                <div class = "price-small">Rs. {{book.price}}</div>
+                            </div>
+                        </a>  
+                            {% comment %} <div class="add-to-cart-small update-cart{% if not book.available %} not-available{% endif %}" disabled data-book={{book.id}} data-action='add'>
+                                <i class="fa-solid fa-cart-shopping"></i>ADD TO CART
+                            </div> {% endcomment %}
+                            <div class="add-to-cart-small update-cart {% if book.in_cart %}remove-from-cart{%endif%} {% if not book.available %} not-available{% endif %}" data-book={{book.id}} data-action="{% if book.in_cart %}remove{% else %}add{%endif%}" data-cart-btn><i class="fa-solid fa-cart-shopping"></i>ADD TO CART</div>                    
+
+                        </div>
+                    
+                </div>   
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class ="pagination-wrapper">
+            <button class = "pagination-btn prev-page first-page" disabled data-page-btn = "prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <a href="#"><div class="pagination first-page current-page">1</div></a>
+            <a href="#"><div class="pagination">2</div></a>
+            <a href="#"><div class="pagination">3</div></a>
+            <a href="#"><div class="pagination">4</div></a>
+            <a href="#"><div class="pagination">5</div></a>
+            <a href="#"><div class="pagination">6</div></a>
+            <a href="#"><div class="pagination last-page">7</div></a>
+            <button class = "pagination-btn next-page" data-page-btn = "next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+</div>
+{% endblock content%}

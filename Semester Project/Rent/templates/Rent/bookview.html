@@ -1,0 +1,113 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+    <title>Bookspage</title>
+    <link rel="stylesheet" href="{% static 'Style/bookview.css' %}">
+    
+    {% endblock head %}
+{% block content %}
+    <div class="container-fluid">
+    
+    <div class="containerone">
+        <div class="blockone">
+            <div class="cardone">
+                <img src="/static/images{{book.book_cover.url}}" alt="error loading" width="300px">
+            </div>
+            <div class="sharebtndiv">
+            <button class="sharebtn">Share</button>
+            </div>
+        </div>
+
+        <div class="blocktwo">
+            <div class="nameauthor">
+                <span class="bookname"><h3>{{book.title}}</h3></span>
+                <span class="author">{{book.author}}</span>
+            </div>
+            <div class="rating">
+                <ul>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+            </div>
+            <div class="typenid">
+                <div class="type">
+
+                </div>
+                <div class="id">
+
+                </div>
+            </div>
+            <div class="separateline">
+                
+            </div>
+            <div class="synopsisdiv">
+                <div class="title"><h3>Description</h3>
+                </div>
+                <div class="about">
+                    <span>{{book.description}} </span>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="blockthree">
+            <div class="cardtwo">
+                <div class="pricetag">
+                    <span><h3>Rs. {{book.price}}</h3></span>
+                </div>
+                <div class="delivery"><span>Delivery to the major cities inside Nepal.</span>
+                </div>
+                <div class="pcsbtndiv">
+                    <input type="number" id="pieces">
+                </div>
+                <div class="cartdiv">
+                    <button class="cart">ADD TO CART</button>
+                </div>
+                <div class="rentdiv">
+                    <button class="rentbook">RENT NOW</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="containertwo">
+        <div class="related">
+            <span><h3>You might also like</h3></span>
+        </div>
+        <div class="bookdiv">
+            {% for book in related  %}
+            <div class="bookcard-1">
+                <img src="/static/images{{book.book_cover.url}}" alt="" height="220px">
+                <p> {{book.title|truncatechars:20}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="containerthree">
+        <div class="review">
+            <span><h3>REVIEW</h3></span>
+        </div>
+        <div class="titlereview">
+            <h4>Write you review here:</h4></span>
+        </div>
+        <form class="postdiv" action="/bookview/{{book.id}}" method="POST">
+            {% csrf_token %}
+            <textarea placeholder="Write Here"  cols="59" rows="9" style="margin-left:6px"; name="comment"></textarea>
+            {% if request.user.is_authenticated %}
+            <button class="reviewpostbtn">POST</button>
+        {% else %}
+        <p><a href="{% url 'login' %}">Login to post review </a> </p>
+        {% endif %}
+        </form>
+    </div>
+
+
+
+</div>
+{% endblock content %}

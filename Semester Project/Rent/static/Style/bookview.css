@@ -1,0 +1,504 @@
+nav{
+    background-color:white;
+    width: auto;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    box-shadow: 0px 1.5px 3px 1px #88888867;
+}
+.navbarLeft{
+    width: 20%;
+}
+.navbarLeft img{
+    width: 45px;
+    height: 45px;
+    background-color: none;
+    margin: 10px 0px 10px 20px;
+    border: 50% solid ;
+}
+.navbarMiddle{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.navList{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+
+}
+.navList li {
+    cursor: pointer;
+}
+
+.navList li:hover {
+    color: rgba(0, 0, 0, 0.448);
+    transition: all 0.6s;
+}
+
+
+.navbarRight{
+    display: flex;
+    width: 30%;
+    margin-right: 5%;
+    justify-content: right;
+    align-items: center;
+}
+.loginBtn{
+    width: 75px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.loginBtn:hover{
+    background-color: white;
+    color:black;
+    transition: all 0.8s;
+}
+.container-fluid{
+    background-color: whitesmoke;
+}
+.containerone{
+        display: flex;
+        flex-direction: row;
+        margin-top: 35px;
+        margin-bottom: 0.6%;
+        
+}
+.containerone .blockone {
+    width:26%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content:space-between;
+}
+.containerone .blockone .cardone{
+    margin-left: 5%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.containerone .blockone .sharebtn{
+    height: 30px;
+    width: 230px;
+    background-color:darkturquoise;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    margin-left: 3.90%;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.containerone .blocktwo{
+    width: 46%;
+    margin-left: 0.5%;
+    padding: 0.5%;
+    border: none ;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.blocktwo .nameauthor{
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    padding: 1px;
+}
+.rating{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.title{
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    padding: 1px;
+}
+.about{
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px;
+    padding-right: 15px;
+}
+.readmore{
+    margin-top: 5px;
+    letter-spacing: 1px;
+    padding:1px;
+    cursor: pointer;
+}
+.rating ul{
+    display: flex;
+    flex-direction: row;
+}
+.containerone .blockthree{
+    width: 26%;
+    margin-left: 0.5%;
+    padding: 0.5%;
+    border: none ;
+    border-radius: 3px;
+    height: 400px;
+}
+.containerone .blockthree .cardtwo {
+    display: flex;
+    flex-direction: column;
+    border:none;
+    border-radius: 3px;
+    width: 93%;
+    align-items: center;
+    justify-content: space-around;
+    height: 350px;
+    background-color: lightyellow;
+    padding-bottom: 5px;
+
+}
+#pieces {
+    width: 200px;
+    height: 40px;
+    background-color:white;
+    color:black;
+    border: 1px solid darkgray;
+    border-radius: 1px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+}
+.cart{
+    width: 200px;
+    height: 35px;
+    background-color:white;
+    color:black;
+    border: 1px solid darkgray;
+    border-radius: 1px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.rentbook{
+    width: 200px;
+    height: 35px;
+    background-color:white;
+    color:black;
+    border: 1px solid darkgray;
+    border-radius: 1px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.containertwo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.containertwo .related{
+    margin-left: 2.5%;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+.containertwo .bookdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.rent {
+    width: 75px;
+    height: 30px;
+    background-color:white;
+    color:black;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.bookcard-1 ul{
+    display: flex;
+    flex-direction: row;
+}
+.bookcard-2 ul{
+    display: flex;
+    flex-direction: row;
+}
+.bookcard-3 ul{
+    display: flex;
+    flex-direction: row;
+}
+.bookcard-4 ul{
+    display: flex;
+    flex-direction: row;
+}
+.bookcard-5 ul{
+    display: flex;
+    flex-direction: row;
+}
+.bookcard-6 ul{
+    display: flex;
+    flex-direction: row;
+}
+.review{
+    margin-left: 2.5%;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+.titlereview{
+    margin-left: 0.7%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+#reviewbox{
+    width: 60%;
+    height: 100px;
+    border: solid 0.5px darkgray;
+    margin-left: 2.5%;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+.postbtn .reviewpostbtn{
+    margin-left: 2.5%;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    height: 30px;
+    width: 150px;
+    background-color:darkcyan;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+footer{
+    background-color:#24262b;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 370px;
+    color: white;
+    justify-content: space-between;
+}
+.footerTop{
+    display: flex;
+    flex-direction: row;
+    height: 58%;
+}
+
+ul{
+	list-style: none;
+}
+.footer-col{
+   width: 33.3%;
+   padding: 0 15px;
+   color: whitesmoke;
+   margin-top: 12px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 55px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footerMiddle{
+    height: 31%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerMiddle .followusdiv{
+    text-align: center;
+}
+.socialLinks{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.footerMiddle .socialLinks a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+    align-items: center;
+    margin-left: 2.5%;
+    
+}
+ .socialLinks a:hover{
+	color: #24262b;
+	background-color:white;
+}
+.footerMiddle .followusdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.footerMiddle .followusdiv .linethree{
+    height: 0.5px;
+    width: 44%;
+    align-items: center;
+    background-color:#bbbbbb;
+}
+.footerMiddle .followusdiv .followustext{
+    width:10% ;
+    text-align: center;
+}
+.footerMiddle .followusdiv .followustext h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	font-weight: 500;
+	position: relative;
+}
+
+.footerMiddle .followusdiv .followustext h4::before{
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 55px;
+    align-items: center;
+}
+.footerMiddle .followusdiv .linefour{
+    height: 0.5px;
+    width: 44%;
+    background-color: #bbbbbb;
+    
+}
+.footerBottom{
+    height: 11%;
+    text-align: center;
+    margin-top: 10px;
+    color: #bbbbbb;
+    
+}
+
+.bookcard-1 p
+{
+    text-align: center;
+    font-size: large;
+}
+
+.containerthree .review
+{
+    background-color: #d9d8d8;
+    display: inline-block;
+    width: 95vw;
+    padding: 8px;
+    text-align: center;
+    border: 2px solid ghostwhite;
+    border-radius: 4px;
+}
+.containerthree
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerone .blockone
+{
+    background-color: white
+}
+.postdiv textarea
+{
+    padding: 6px;
+    border: 1px solid rgb(165, 163, 163);
+    font-size: large;
+}
+
+.titlereview h4
+{
+    font-size: large;
+}
+.postdiv .reviewpostbtn
+{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: large;
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+.postdiv .reviewpostbtn:hover
+{
+    background-color: rgba(255, 255, 255, 0.849);
+    color: black;
+    
+}
+.postdiv
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerthree
+{
+    margin-bottom: 1.5rem;
+}
+.containerthree p a
+{
+    text-decoration: solid;
+    color: rgb(41, 21, 221);
+
+}
+.containerthree p a:hover
+{
+    font-style: bold;
+    color: rgba(38, 0, 255, 0.637);
+
+}
+.containerthree p 
+{
+    margin-top: 10px;
+}

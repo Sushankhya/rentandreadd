@@ -1,0 +1,137 @@
+.cart-wrapper{
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-container{
+    background-color: white;
+    width: 60%;
+    padding: 20px;
+    margin: 100px 0;
+    border-radius: 7px;
+    box-shadow: 0 3px 5px 6px rgb(206, 206, 206);
+    
+}
+.cart-table{
+    width: 100%;
+}
+.cart-title{
+    display: flex;
+    align-items: row;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.514);
+    padding: 0 50px 20px 50px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+
+}
+.book-cover{
+    width: 60px;
+}
+.book{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.book-details{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+th{
+    text-align: center;
+    padding: 5px;
+}
+td{
+    text-align: center;
+    padding: 5px;
+}
+
+.book-title{
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
+.book-title:hover{
+    color: rgb(54, 54, 54);
+}
+.book-author{
+    font-size: 0.9rem;
+    color: grey;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(128, 128, 128, 0.514);
+    padding-top: 15px;
+}
+.btn>a{
+    color: black;
+}
+
+.btn>a:hover{
+    color: rgb(78, 78, 78);
+}
+a{
+    text-decoration: none;
+}
+.fa-solid{
+    margin-right: 10px;
+}
+.total-price{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+}
+.checkout-btn{
+    text-align: center;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+.checkout-btn:hover{
+    background-color: white;
+    color: black;
+}
+.disabled-btn{
+    text-align: center;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: rgba(165, 165, 165, 0.87);
+    color: rgb(255, 255, 255);
+    /* border: 1px solid black; */
+    cursor: no-drop;
+}
+
+.remove-btn{
+    cursor: pointer;
+    color: rgba(224, 66, 66, 0.753);
+    font-size: 1.3rem;
+}
+.remove-btn:hover{
+    color: rgb(224, 66, 66);
+}
+
+.no-item{
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    color: rgb(82, 82, 82);
+    margin-bottom: 5px;
+}
+.no-item-description{
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgb(82, 82, 82);
+    margin-bottom: 20px;
+}
+.hidden{
+    display: none;
+}

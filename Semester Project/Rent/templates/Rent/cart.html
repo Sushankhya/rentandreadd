@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'Style/cart.css' %}">
+    <script src="{% static 'Script/cart.js' %}" defer></script>
+    <title>rentNread: Cart</title>
+{% endblock head%}
+
+{% block content %}
+    <div class = "cart-wrapper">
+        <div class = "cart-container">
+            <div class="cart-title">
+                <p>Shopping Cart</p>
+                <p>{% if not items %}0{% else %}{{order.getTotalItems}}{% endif %} items</p>
+            </div>
+            {% if items %}
+            <table class = "cart-table">
+                <tr>
+                    <th>Book</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+                {% for item in items %}
+                <tr>
+                    <td class = "book">
+                        <img class="book-cover" src="/static/images{{item.product.book_cover.url}}" alt="book-cover">
+                        <div class="book-details">
+                            <a href="#"><p class = "book-title">{{ item.product.title }}</p></a>
+                            <p class = "book-author">{{item.product.author}}</p>
+                        </div>
+                    </td>
+                    <td>Rs. {{ item.product.price }}</td>
+                    <td><i class='fa fa-remove remove-btn' data-book = {{item.product.id}}></i></td>
+                </tr>
+                {%endfor%}
+                
+            </table>
+            {% else %}
+            <div class = 'no-item'>Cart is empty</div>
+            <p class="no-item-description">Books added to the cart will appear here.</p>
+            {% endif %}
+            <div class = "btn">
+                <a href="{% url 'book' %}"><p><i class="fa-solid fa-arrow-left"></i>Book Section</p></a>
+                <div>
+                    <p class="total-price">Total: Rs. {{order.getCartTotal}}</p>
+                    {% if not items %}
+                    <a href="#"><div class ="disabled-btn">Check Out</div></a>
+                    {% else %}
+                    <a href={% url 'check-out' %}><div class ="checkout-btn">Check Out</div></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content%}

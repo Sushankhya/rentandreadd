@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/registerpage.css' %}" />
+<script src="{% static 'script/register.js' %}" defer></script>
+<title>Register</title>
+
+{% endblock head %}
+
+{% block content %}
+{% comment %} <div class = "register-wrapper">
+    <h1>Register here </h1>
+    {% if messages %}
+        <div class = "error-message">
+          {% for message in messages %}
+            {% if message.tags %}
+              {{ message }}
+            {% endif %}
+          {% endfor %} 
+      </div>
+    {% endif %}
+    <form method = "POST" action = "{% url 'register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type= "submit" value = "Register">
+    </form>
+    <p>Already have an account? <a href = "{% url 'login' %}">Login </a></p>
+</div> {% endcomment %}
+
+<div class = "register-page-wrapper">
+  <div class = 'register-card' >
+    <div class = "register-header">
+      <img src = {% static 'images/logo/applogo.png' %}> 
+      <h3>Register an account</h3>
+      <p>Create a new RentNRead account</p>
+    </div>
+    {% comment %} Error message if any {% endcomment %}
+    {% if messages %}
+    <div class = "error-message" data-error-message>
+      {% for message in messages %}
+        {% if message.tags %}
+          <p>{{ message }}</p>
+          <button class = "error-close-btn">&#10006;</button>
+        {% endif %}
+      {% endfor %} 
+    </div>
+    {% endif %}
+      {% comment %} <div class = "error-message">
+        <p>This is an error message</p>
+        <button class = "error-close-btn">x</button>
+      </div> {% endcomment %}
+    {% comment %} register form {% endcomment %}
+    <form method = "POST" action = "{% url 'register' %}">
+      {% csrf_token %}
+      {% for field in form %}
+          {% comment %} <input type="text" name="firstName" placeholder="First Name" required /> {% endcomment %}
+          {{field}}
+          {% if field.help_text %}
+            {% comment %} <small>{{field.help_text}}</small> {% endcomment %}
+          {% endif %}
+          {% for error in field.errors %}
+            <p style = "color: red;">{{error}}</p>
+          {% endfor %}
+      {% endfor %}
+      <button type="submit" class="registerBtnn">SIGN UP</button>
+    </form>
+    {% comment %} already have an account? {% endcomment %}
+    <div class = "register-alt">
+      <p>Already have an account? <a href = "{% url 'login' %}">Login </a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

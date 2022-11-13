@@ -1,0 +1,1 @@
+send cart info in movies section and display remove from cart

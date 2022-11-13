@@ -1,0 +1,20 @@
+{% load static %}
+<header>
+    <div class="left">
+        <a href="{% url 'homepage' %}"><img src="{% static './image/applogo.png' %}" alt="Logo" class="logo"></a>
+    </div>
+    <div class="center">
+        <form class="search" method="get" action="/search">
+            <input type="text" name="query" id="query" placeholder="📚Search Books Here ">
+        </form>
+    </div>
+    <div class="right">
+        {% if request.user.is_authenticated %}
+        {% comment %} <img src="{% static './images/cart.png' %}" class="cart"> {% endcomment %}
+        <a href = "{% url 'cart' %}"><img class = "user-cart" src = "{% static './images/cart.png' %}"></a>
+        <a href="{% url 'profile' %}"><img src="{% static 'image/profile.jpg' %}" alt="profile" class="profile"></a>
+        {%else%}
+        <a href="{% url 'login' %}"><button class="loginBtn">LOGIN</button></a>
+        <a href="{% url 'register' %}"><button class="signUpBtn">SIGN UP</button></a>
+        {%endif%}
+</header>

@@ -1,0 +1,125 @@
+.register-page-wrapper{
+    /* height: 120vh; */
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.register-page-wrapper::after{
+    background-image: url(../images/login-cover.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.25;
+    height: 100vh;
+    display: block;
+    filter: blur(2px);
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    content: '';
+}
+.register-card{
+    /* width: 50%; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 4rem 0;
+    border-radius: 7px;
+    padding: 1.35rem 4rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-header{
+    text-align:center;
+    margin-bottom: 1rem;
+}
+.register-header > p{
+    margin-top: 0.4rem;
+    color: rgb(104, 104, 104);
+}
+.register-header > img{
+    width: 5rem;
+}
+.error-message{
+    width: 100%;
+    padding: 0.55rem;
+    background-color: rgba(231, 89, 89, 0.267);
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    color: red;
+    margin-bottom: 0.5rem;
+}
+.error-close-btn{
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+    font-weight: 400;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+form > input{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 0 7px;
+    font-size: 1.1rem;
+}
+form > input:focus{
+    outline: none;
+    box-shadow: 0 0 3px 0.2px rgb(88, 88, 88);
+}
+
+.registerBtnn{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 7px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+}
+.registerBtnn:hover,
+.registerBtnn:focus{
+    background-color: white;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+.register-alt{
+    margin-top: 1rem;
+    color: rgb(77, 77, 77);
+}
+.register-alt a{
+    text-decoration: none;
+    font-weight: 400;
+    color: #ee7300c9;
+}
+
+.register-alt a:hover{
+    color: #ee7300;
+}
+
+.hidden{
+    display: none;
+}

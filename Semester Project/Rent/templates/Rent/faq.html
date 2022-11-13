@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% load static %}
+
+    {% block head %}
+    <title>FAQs</title>
+    <link rel="stylesheet" href="{% static 'Style/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'Style/faq.css' %}">
+    {% endblock head%}
+
+    {% block content %}
+
+    <div id = "faq">
+        <div class="faq-background" style = "background-image: url('{% static 'image/2.jpg' %}')"></div>
+        <h1 class = "faq-title">FAQs</h1>
+        <div class="accordion-container">
+
+            {% for faq in faqs%}
+                <div class = "accordion">
+                    <button class = "question"><p>{{ faq.question}}</p><i class="fas fa-chevron-down down"></i></button>
+                    <div class = "answer"><p>{{ faq.answer }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock content %}
+
+    {% block javascript %}
+    <script src="{% static 'script/homepage.js' %}"></script>
+    <script src="{% static 'script/faq.js' %}"></script>
+    {% endblock javascript %}

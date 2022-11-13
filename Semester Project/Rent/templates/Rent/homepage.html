@@ -1,0 +1,54 @@
+
+{% extends 'main.html' %}
+{% load static %}
+    {% block head %}
+    <title>RentNRead</title>
+    <link rel="stylesheet" href="{% static 'Style/homepage.css' %}">
+    {% endblock head %}
+
+
+    {% block content %}
+        <div class="sliderbox">
+        </div>
+
+        <div class="searchBox">
+            <div class="searchinput"><input type="text" class="search" placeholder="search for a book ..."></div>
+            <div class="searchicon"><button class="searchbtn fa fa-search"></button></div>
+        </div>
+        <div class="aboutUsBox" id="aboutSection">
+            <div class="aboutUs">
+                <div class="lineone"></div>
+                <div class="aboutustext">
+                    <h4>About us</h4>
+                </div>
+                <div class="linetwo"></div>
+            </div>
+            <div class="contentWrapper">
+                <img src="{% static './image/backgroundimageaboutus.png' %}" alt="error loading">
+                <div class="textWrapper">
+                    <span class="text">
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero enim a  sapiente corporis ab nulla reprehenderit debitis eveniet aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. A, deserunt!  </p>
+
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing ulpa magnam ducimus! Lorem ipsum dolor Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis repellat nihil sed explicabo? </p>
+
+                    <p>sit amet consectetur adipisicing elit. Alias, aperialor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, consectetur! </p> 
+
+                    <p> Odit facilis molestiae rem nam, dolor ipsa alias numquam eni doloribus elig nem consectetur quia non quidem aliquam magnam veniam fuga natus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi ipsum veritatis sunt! </p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, temporibus molestias vero animi a qui mollitia architecto minus nulla illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolores omnis sint iusto, culpa porro maxime veniam. Labore, vero ipsum. </p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, temporibus molestias vero animi a qui mollitia architecto minus nulla illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus explicabo quisquam incidunt facilis porro autem odio, dicta veniam quos molestias maiores in exercitationem dolorem aperiam ea harum ut repudiandae sint? </p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing  consectetur adipisicing elit. A dolores omnis sint iusto, culpa porro maxime veniam. Labore, vero ipsum. </p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing  consectetur adipisicing elit. A dolores omnis sint iusto, culpa porro maxime veniam. Labore, vero ipsum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. A possimus fugit obcaecati? </p>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    {% endblock content %}
+    {% block javascript %}
+    <script src="{% static 'homepage.js' %}"></script>
+    {% endblock javascript %}

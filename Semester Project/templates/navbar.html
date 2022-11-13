@@ -1,0 +1,27 @@
+{% load static %}
+    
+    <nav class="navbar">
+        <div class="navbarLeft">
+
+            <a href="{% url 'homepage' %}"><img src="{% static './image/applogo.png' %}" alt="error loading"></a>
+        </div>
+        <div class="navbarMiddle">
+            <ul class="navList">
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li><a href="{% url 'book' %}">Books</a></li>
+                <li><a href="{% url 'homepage' %}#aboutSection">About us</a></li>
+                <li><a href="{% url 'faq' %}">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="navbarRight">
+            {% if request.user.is_authenticated %}
+            <div class = "user-profile">
+                <a href = "{% url 'cart' %}"><img class = "user-cart" src = "{% static './images/cart.png' %}"></a>
+                <a href="{% url 'logout' %}"><button class="loginBtn">LOGOUT</button></a>
+            </div>
+            {% else %}
+            <a href="{% url 'login' %}"><button class="loginBtn">LOGIN</button></a>
+            <a href="{% url 'register' %}"><button class="signUpBtn">SIGN UP</button></a>
+            {% endif %}
+        </div>
+    </nav>
